@@ -1,12 +1,12 @@
 h2{
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
 p, ul{
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-size: clamp(0.5rem, calc(2vw + 1rem), 1.5rem);
+    font-size: clamp(0.5rem, calc(2vw + 1rem), 4rem);
 }
 
 ul{
@@ -16,4 +16,8 @@ ul{
 
 ul > li > a:hover {
    text-decoration: none;
+}
+
+.col > h2, .col > h3, .col > p, .col > ul {
+    text-align: center;
 }
