@@ -121,4 +121,4 @@ El sitio incluye soporte para tema claro/oscuro con toggle en el header.
 
 ---
 
-Hecho con ♥ en Maracaibo, Venezuela
+Hecho con 🫓 en Maracaibo, Venezuela
