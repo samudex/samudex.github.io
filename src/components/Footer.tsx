@@ -9,7 +9,7 @@ export function Footer() {
             © {currentYear} Daniel Enrique Prieto Gallani. Todos los derechos reservados.
           </p>
           <p className="text-sm text-muted-foreground">
-            Hecho con <span className="text-primary">♥</span> en Maracaibo, Venezuela
+            Hecho con <span className="text-primary">🫓</span> en Maracaibo, Venezuela
           </p>
         </div>
       </div>
