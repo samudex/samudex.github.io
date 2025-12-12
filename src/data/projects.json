@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "proyecto-angular-dashboard",
+    "title": "Dashboard de Gestión Empresarial",
+    "description": "Panel de administración completo para gestión de comercios y usuarios, con visualización de datos en tiempo real y reportes personalizados.",
+    "role": "Full Stack Developer",
+    "tech": ["Angular", "NodeJS", "SQL Server", "TypeScript"],
+    "highlights": [
+      "Implementación de gráficos interactivos con Chart.js",
+      "Sistema de autenticación y roles de usuario",
+      "Optimización de consultas SQL mejorando rendimiento en 40%"
+    ],
+    "year": 2024,
+    "links": {
+      "repo": "",
+      "demo": ""
+    }
+  },
+  {
+    "slug": "landing-page-responsiva",
+    "title": "Landing Pages Corporativas",
+    "description": "Desarrollo de múltiples landing pages responsivas para campañas de marketing digital, optimizadas para conversión y SEO.",
+    "role": "Frontend Developer",
+    "tech": ["WordPress", "WPBakery", "HTML", "CSS", "JavaScript"],
+    "highlights": [
+      "Diseño mobile-first con excelente rendimiento",
+      "Integración con herramientas de analytics",
+      "Tiempo de carga optimizado bajo 2 segundos"
+    ],
+    "year": 2024,
+    "links": {
+      "repo": "",
+      "demo": ""
+    }
+  },
+  {
+    "slug": "automatizacion-data-entry",
+    "title": "Sistema de Automatización de Datos",
+    "description": "Herramientas de automatización para procesos de carga y actualización masiva de datos comerciales usando JavaScript y hojas de cálculo.",
+    "role": "Data Automation Developer",
+    "tech": ["JavaScript", "Google Sheets", "CSV", "Python"],
+    "highlights": [
+      "Reducción del tiempo de carga de datos en 60%",
+      "Gestión de más de 400 perfiles de comercios",
+      "Scripts reutilizables para diferentes fuentes de datos"
+    ],
+    "year": 2023,
+    "links": {
+      "repo": "",
+      "demo": ""
+    }
+  }
+]
