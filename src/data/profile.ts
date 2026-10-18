@@ -6,10 +6,11 @@ export const profile = {
   location: "Maracaibo, Venezuela",
   timezone: "America/Caracas",
   timezoneLabel: "GMT−4",
-  email: "deprieto@urbe.edu.ve",
+  email: "samudex@gmail.com",
   github: "https://github.com/samudex",
   linkedin: "https://linkedin.com/in/danielprietog",
-  whatsapp: "https://wa.me/584126682072",
+  whatsapp:
+    "https://api.whatsapp.com/send/?phone=584126682072&text=Hola+Daniel%21+Me+gustaría+crear+un+proyecto+de+software&type=phone_number&app_absent=0",
 
   availability: "Disponible para nuevos proyectos",
 
@@ -62,8 +63,8 @@ export const profile = {
     {
       id: "email",
       label: "Email",
-      handle: "deprieto@urbe.edu.ve",
-      href: "mailto:deprieto@urbe.edu.ve",
+      handle: "samudex@gmail.com",
+      href: "mailto:samudex@gmail.com",
     },
   ],
 } as const;

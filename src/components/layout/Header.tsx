@@ -75,15 +75,22 @@ export function Header() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <header
-      ref={headerRef}
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled || open
-          ? "border-b border-white/[0.06] bg-ink-950/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
-      )}
-    >
+    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50">
+      {/*
+        Capa de fondo de la barra superior. Vive en su propio elemento en
+        lugar del propio <header> porque `backdrop-filter` crea un containing
+        block que rompe el posicionamiento `fixed` del menú móvil (lo colapsaba
+        a ~1px de alto).
+      */}
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute inset-x-0 top-0 h-20 border-b transition-colors duration-300",
+          scrolled || open
+            ? "border-white/[0.06] bg-ink-950/80 backdrop-blur-xl"
+            : "border-transparent bg-transparent",
+        )}
+      />
       <div className="container-page relative z-10">
         <div className="flex h-20 items-center justify-between">
           <a

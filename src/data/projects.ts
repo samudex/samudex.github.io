@@ -13,7 +13,9 @@ export type Project = {
   displayUrl: string;
   accent: string;
   accentRgb: string;
-  preview: "comopago" | "focusbud";
+  /** Ruta de la captura real del sitio (en /public/projects). */
+  image: string;
+  imageAlt: string;
 };
 
 export const projects: Project[] = [
@@ -37,7 +39,9 @@ export const projects: Project[] = [
     displayUrl: "comopago.web.app",
     accent: "#4d8dff",
     accentRgb: "77, 141, 255",
-    preview: "comopago",
+    image: "/projects/comopago.png",
+    imageAlt:
+      "Captura de Comopago: comparación de tasas BCV y Binance P2P y recomendación de pago.",
   },
   {
     id: "focus-bud",
@@ -59,6 +63,8 @@ export const projects: Project[] = [
     displayUrl: "focus-bud.web.app",
     accent: "#00ceff",
     accentRgb: "0, 206, 255",
-    preview: "focusbud",
+    image: "/projects/focusbud.png",
+    imageAlt:
+      "Captura de Focus-bud: pantalla de sesión de foco con la única tarea del momento.",
   },
 ];

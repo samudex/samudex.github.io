@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { profile } from "@/data/profile";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -41,22 +42,18 @@ export function Contact() {
               </p>
             </Reveal>
 
-            <Reveal delay={0.18}>
-              <a
-                href={`mailto:${profile.email}`}
-                className="group mt-10 inline-flex flex-wrap items-baseline gap-x-4 gap-y-2 text-xl font-medium tracking-[-0.03em] text-white transition-colors hover:text-acid sm:text-2xl md:text-3xl"
-              >
-                {profile.email}
-                <ArrowUpRight
-                  className="h-5 w-5 text-acid transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                  aria-hidden="true"
-                />
-              </a>
-            </Reveal>
-
             <Reveal delay={0.24}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href={`mailto:${profile.email}`} className="btn btn-primary">
+                <a
+                  href={profile.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                >
+                  <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp
+                </a>
+                <a href={`mailto:${profile.email}`} className="btn btn-ghost">
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   Enviar email
                 </a>

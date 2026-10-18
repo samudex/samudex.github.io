@@ -1,8 +1,6 @@
 import { Lock } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { TiltFrame } from "./TiltFrame";
-import { ComopagoPreview } from "./previews/ComopagoPreview";
-import { FocusBudPreview } from "./previews/FocusBudPreview";
 
 type ProjectPreviewProps = {
   project: Project;
@@ -36,12 +34,14 @@ export function ProjectPreview({ project }: ProjectPreviewProps) {
           </span>
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/10]">
-          {project.preview === "comopago" ? (
-            <ComopagoPreview />
-          ) : (
-            <FocusBudPreview />
-          )}
+        <div className="relative aspect-[4/3] overflow-hidden bg-ink-900 sm:aspect-[16/10]">
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover object-top"
+          />
 
           <div
             aria-hidden="true"
