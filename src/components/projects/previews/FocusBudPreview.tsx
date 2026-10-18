@@ -96,7 +96,7 @@ export function FocusBudPreview() {
                 cy="50"
                 r="46"
                 fill="none"
-                stroke="#c9f75e"
+                stroke="#00ceff"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeDasharray="289"

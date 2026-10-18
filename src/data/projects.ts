@@ -57,8 +57,8 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Framer Motion", "Tailwind CSS", "Vite"],
     url: "https://focus-bud.web.app",
     displayUrl: "focus-bud.web.app",
-    accent: "#c9f75e",
-    accentRgb: "201, 247, 94",
+    accent: "#00ceff",
+    accentRgb: "0, 206, 255",
     preview: "focusbud",
   },
 ];

@@ -26,8 +26,8 @@ function FallbackOrb() {
       >
         <defs>
           <radialGradient id="fallback-orb-fill" cx="38%" cy="32%" r="72%">
-            <stop offset="0%" stopColor="#51622f" stopOpacity="0.55" />
-            <stop offset="42%" stopColor="#161d18" stopOpacity="0.85" />
+            <stop offset="0%" stopColor="#1e5f70" stopOpacity="0.55" />
+            <stop offset="42%" stopColor="#101a1f" stopOpacity="0.85" />
             <stop offset="100%" stopColor="#05070a" stopOpacity="0.98" />
           </radialGradient>
           <linearGradient
@@ -37,13 +37,13 @@ function FallbackOrb() {
             x2="1"
             y2="1"
           >
-            <stop stopColor="#c9f75e" stopOpacity="0.7" />
+            <stop stopColor="#00ceff" stopOpacity="0.7" />
             <stop offset="1" stopColor="#8be9ff" stopOpacity="0.18" />
           </linearGradient>
           <radialGradient id="fallback-orb-core" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#f2ffc9" stopOpacity="0.95" />
-            <stop offset="30%" stopColor="#c9f75e" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#c9f75e" stopOpacity="0" />
+            <stop offset="0%" stopColor="#d9fbff" stopOpacity="0.95" />
+            <stop offset="30%" stopColor="#00ceff" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#00ceff" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -79,10 +79,10 @@ function FallbackOrb() {
           fill="url(#fallback-orb-core)"
           opacity="0.85"
         />
-        <circle cx="200" cy="200" r="7" fill="#eaffbd" />
+        <circle cx="200" cy="200" r="7" fill="#c7f7ff" />
         <circle cx="200" cy="200" r="3" fill="#ffffff" />
 
-        <g fill="#c9f75e">
+        <g fill="#00ceff">
           <circle cx="200" cy="54" r="2.5" opacity="0.8" />
           <circle cx="200" cy="346" r="2" opacity="0.5" />
           <circle cx="54" cy="200" r="2" opacity="0.45" />

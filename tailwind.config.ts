@@ -30,9 +30,9 @@ export default {
           700: "#11151b",
         },
         acid: {
-          DEFAULT: "#c9f75e",
-          soft: "#d6ff77",
-          dim: "#a9d63e",
+          DEFAULT: "#00ceff",
+          soft: "#5ce1ff",
+          dim: "#00a6cc",
         },
         ice: "#8be9ff",
         mist: "#9ba1aa",

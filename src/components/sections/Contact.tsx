@@ -10,7 +10,7 @@ export function Contact() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_50%_110%,rgba(201,247,94,0.11),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_50%_110%,rgba(0,206,255,0.11),transparent_70%)]"
       />
       <div
         aria-hidden="true"

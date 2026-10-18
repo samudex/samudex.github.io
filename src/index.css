@@ -16,8 +16,8 @@
   --fg-subtle: #6c727c;
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.16);
-  --acid: #c9f75e;
-  --acid-rgb: 201, 247, 94;
+  --acid: #00ceff;
+  --acid-rgb: 0, 206, 255;
   --ice: #8be9ff;
   --blue: #5b8cff;
   --radius: 1rem;
@@ -232,12 +232,12 @@
 
   .btn-primary {
     background: var(--acid);
-    color: #080a06;
+    color: #00131a;
     box-shadow: 0 0 0 0 rgba(var(--acid-rgb), 0);
   }
 
   .btn-primary:hover {
-    background: #d6ff77;
+    background: #5ce1ff;
     box-shadow: 0 12px 40px -12px rgba(var(--acid-rgb), 0.55);
   }
 
@@ -323,7 +323,7 @@
     z-index: 100;
     border-radius: 999px;
     background: var(--acid);
-    color: #080a06;
+    color: #00131a;
     padding: 0.75rem 1.25rem;
     font-size: 0.875rem;
     font-weight: 600;

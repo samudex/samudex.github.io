@@ -67,7 +67,7 @@ function ParticleField({
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
 
-    const acid = new THREE.Color("#c9f75e");
+    const acid = new THREE.Color("#00ceff");
     const blue = new THREE.Color("#5b8cff");
     const white = new THREE.Color("#ffffff");
 
@@ -194,7 +194,7 @@ export function Scene() {
       <pointLight
         position={[4, 3, 4]}
         intensity={55}
-        color="#d8ff77"
+        color="#7fe9ff"
         distance={20}
         decay={2}
       />
@@ -223,7 +223,7 @@ export function Scene() {
                 metalness={0.92}
                 roughness={0.22}
                 flatShading
-                emissive="#1a240c"
+                emissive="#07313d"
                 emissiveIntensity={0.55}
               />
             </mesh>
@@ -231,7 +231,7 @@ export function Scene() {
             <mesh ref={shellRef} scale={1.015}>
               <icosahedronGeometry args={[1.55, 1]} />
               <meshBasicMaterial
-                color="#c9f75e"
+                color="#00ceff"
                 wireframe
                 transparent
                 opacity={0.12}
@@ -241,7 +241,7 @@ export function Scene() {
             <mesh scale={0.5}>
               <icosahedronGeometry args={[1, 1]} />
               <meshBasicMaterial
-                color="#d9ff8a"
+                color="#8defff"
                 transparent
                 opacity={0.9}
               />
@@ -251,7 +251,7 @@ export function Scene() {
               <sprite scale={[5.6, 5.6, 1]}>
                 <spriteMaterial
                   map={glow}
-                  color="#c9f75e"
+                  color="#00ceff"
                   transparent
                   opacity={0.3}
                   blending={THREE.AdditiveBlending}
@@ -265,7 +265,7 @@ export function Scene() {
             <mesh>
               <torusGeometry args={[2.35, 0.006, 8, 200]} />
               <meshBasicMaterial
-                color="#c9f75e"
+                color="#00ceff"
                 transparent
                 opacity={0.32}
               />
@@ -280,7 +280,7 @@ export function Scene() {
             </mesh>
             <mesh position={[2.35, 0, 0]}>
               <sphereGeometry args={[0.045, 16, 16]} />
-              <meshBasicMaterial color="#c9f75e" />
+              <meshBasicMaterial color="#00ceff" />
             </mesh>
             <mesh position={[-2.35, 0, 0]}>
               <sphereGeometry args={[0.025, 16, 16]} />
@@ -303,7 +303,7 @@ export function Scene() {
                   color="#1b222b"
                   metalness={1}
                   roughness={0.18}
-                  emissive="#2a3810"
+                  emissive="#08343f"
                   emissiveIntensity={0.5}
                 />
               </mesh>
