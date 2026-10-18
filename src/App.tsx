@@ -1,27 +1,33 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/Hero";
+import { Projects } from "@/components/sections/Projects";
+import { Skills } from "@/components/sections/Skills";
+import { Contact } from "@/components/sections/Contact";
+import { Marquee } from "@/components/ui/Marquee";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { profile } from "@/data/profile";
 
-const queryClient = new QueryClient();
+export default function App() {
+  return (
+    <div className="relative min-h-screen overflow-x-clip">
+      <div className="noise-overlay" aria-hidden="true" />
+      <a href="#contenido" className="skip-link">
+        Saltar al contenido
+      </a>
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      <ScrollProgress />
+      <Header />
 
-export default App;
+      <main id="contenido" tabIndex={-1}>
+        <Hero />
+        <Marquee items={profile.stackTicker} />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

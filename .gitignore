@@ -1,1 +1,21 @@
-node_modules
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Artefactos de pruebas visuales / automatización
+.preview/
+.chrome-profile*/
+.edge-cdp*/
+.edge-profile*/
+.npm-cache/
+
+# Entorno
+.env
+.env.*
+!.env.example
+*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
