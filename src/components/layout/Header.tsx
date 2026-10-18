@@ -99,8 +99,12 @@ export function Header() {
             className="group flex items-center gap-3"
             aria-label="Daniel Prieto — ir al inicio"
           >
-            <span className="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] font-mono text-[13px] font-semibold tracking-tighter text-white transition-colors group-hover:border-acid/40 group-hover:text-acid">
-              dp<span className="text-acid">.</span>
+            <span className="relative flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] transition-colors group-hover:border-acid/40">
+              <img
+                src="/favicon-96x96.png"
+                alt=""
+                className="h-full w-full rounded-full object-cover"
+              />
               <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full border-2 border-ink-950 bg-acid" />
             </span>
             <span className="hidden sm:block">

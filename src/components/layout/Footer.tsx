@@ -11,8 +11,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <a href="#inicio" className="inline-flex items-center gap-3">
-              <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] font-mono text-xs font-semibold tracking-tighter text-white">
-                dp<span className="text-acid">.</span>
+              <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03]">
+                <img
+                  src="/favicon-96x96.png"
+                  alt=""
+                  className="h-full w-full rounded-full object-cover"
+                />
               </span>
               <span className="text-sm font-medium text-white">
                 Daniel Prieto
