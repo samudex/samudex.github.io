@@ -479,7 +479,9 @@
     left: 50%;
     width: min(74vw, 44rem);
     aspect-ratio: 1;
-    transform: translate(-8%, -52%);
+    /* Matches the WebGL orb projection: the scene places it at x = 2.25,
+       which is ~41.87% of the canvas height right of the center. */
+    transform: translate(calc(41.87cqh - 50%), -52%);
     opacity: 0.95;
     pointer-events: none;
     filter: drop-shadow(0 0 90px rgba(var(--acid-rgb), 0.12));
@@ -488,7 +490,7 @@
   @media (max-width: 767px) {
     .orb-fallback {
       width: min(100vw, 30rem);
-      transform: translate(-40%, -36%);
+      transform: translate(-50%, -36%);
       opacity: 0.55;
     }
   }

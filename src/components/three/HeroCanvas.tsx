@@ -8,7 +8,13 @@ import {
 } from "react";
 import { useReducedMotion } from "framer-motion";
 
-const HeroCanvasInner = lazy(() => import("./HeroCanvasInner"));
+const loadHeroCanvas = () => import("./HeroCanvasInner");
+const HeroCanvasInner = lazy(loadHeroCanvas);
+
+/** How long the 3D scene may take before the static orb is shown. */
+const FALLBACK_DELAY_MS = 320;
+/** Slightly longer than the CSS crossfade, so the fallback can be removed. */
+const CROSSFADE_MS = 560;
 
 function FallbackOrb() {
   return (
@@ -109,6 +115,21 @@ function supportsWebGL() {
   }
 }
 
+const webglAvailable =
+  typeof window !== "undefined" ? supportsWebGL() : false;
+
+/**
+ * Start downloading the Three.js chunk as soon as this module is evaluated
+ * instead of waiting for the mount effect. This runs in parallel with the
+ * rest of the app, so the hero usually never needs to show the fallback.
+ */
+if (
+  webglAvailable &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  void loadHeroCanvas();
+}
+
 class CanvasErrorBoundary extends Component<
   { children: ReactNode; fallback: ReactNode },
   { failed: boolean }
@@ -125,38 +146,68 @@ class CanvasErrorBoundary extends Component<
 }
 
 /**
- * The 3D scene is intentionally isolated behind a lazy import:
- * Three.js only downloads when the hero is actually rendered, and the
- * site keeps a styled CSS fallback for reduced motion or missing WebGL.
+ * The 3D scene is intentionally isolated behind a lazy import so Three.js
+ * does not block the initial paint. The chunk is preloaded as soon as this
+ * module loads, and the styled CSS orb only appears if the scene takes long
+ * enough to become visible. Once the first WebGL frames are ready, both
+ * layers crossfade instead of swapping abruptly.
  */
 export function HeroCanvas() {
   const reduceMotion = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
-  const [webglFailed, setWebglFailed] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [fallbackVisible, setFallbackVisible] = useState(false);
+  const [fallbackMounted, setFallbackMounted] = useState(true);
+
+  const staticFallback = Boolean(reduceMotion) || !webglAvailable;
 
   useEffect(() => {
-    if (!supportsWebGL()) {
-      setWebglFailed(true);
-      return;
-    }
+    if (staticFallback) return;
 
-    const timer = window.setTimeout(() => setMounted(true), 120);
+    const timer = window.setTimeout(
+      () => setFallbackVisible(true),
+      FALLBACK_DELAY_MS,
+    );
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [staticFallback]);
 
-  if (reduceMotion || webglFailed) {
+  useEffect(() => {
+    if (!ready) return;
+
+    const timer = window.setTimeout(
+      () => setFallbackMounted(false),
+      CROSSFADE_MS,
+    );
+    return () => window.clearTimeout(timer);
+  }, [ready]);
+
+  if (staticFallback) {
     return <FallbackOrb />;
   }
 
   return (
     <CanvasErrorBoundary fallback={<FallbackOrb />}>
-      {mounted ? (
-        <Suspense fallback={<FallbackOrb />}>
-          <HeroCanvasInner />
-        </Suspense>
-      ) : (
-        <FallbackOrb />
-      )}
+      <div className="relative h-full w-full [container-type:size]">
+        {fallbackMounted && (
+          <div
+            aria-hidden="true"
+            className={`absolute inset-0 transition-opacity duration-500 ease-out ${
+              fallbackVisible && !ready ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <FallbackOrb />
+          </div>
+        )}
+
+        <div
+          className={`absolute inset-0 transition-opacity duration-500 ease-out ${
+            ready ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Suspense fallback={null}>
+            <HeroCanvasInner onReady={() => setReady(true)} />
+          </Suspense>
+        </div>
+      </div>
     </CanvasErrorBoundary>
   );
 }
